@@ -63,7 +63,9 @@ Los modelos entrenados se almacenan en archivos serializados (.pkl):
 
 - `finalized_model_dt_pickle.pkl`
 - `finalized_model_rf_pickle.pkl`
-
+- 
+**El modelo Random Forest no se incluye debido a su tamaño, pero puede ser generado ejecutando el notebook de entrenamiento**
+  
 Estos modelos posteriormente se utilizan para realizar predicciones en tiempo real a partir de los datos del sensor.
 
 # Funcionamiento del sistema
