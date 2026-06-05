@@ -6,7 +6,7 @@ El sistema captura datos de acelerómetro y giroscopio, procesa las señales y c
 # Demostración
 
 <p align="center">
-  <a href="[https://github.com/user-attachments/assets/xxxxx](https://github.com/user-attachments/assets/xxxxx](https://github.com/user-attachments/assets/92d76824-e11b-4493-bbe8-c0d228bad55f)">
+  <a href="https://github.com/user-attachments/assets/92d76824-e11b-4493-bbe8-c0d228bad55f">
     Ver video de demostración
   </a>
 
