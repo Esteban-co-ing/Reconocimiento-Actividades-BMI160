@@ -59,13 +59,48 @@ A partir del cuaderno de Google Colab **"P6acelerometro.ipynb"**, se procesaron 
 - Árbol de decisión  
 - Random Forest  
 
-Los modelos entrenados se almacenan en archivos serializados (.pkl):
+## Modelos entrenados
 
-- `finalized_model_dt_pickle.pkl`
-- `finalized_model_rf_pickle.pkl`
+Los modelos generados se almacenan en archivos serializados (.pkl):
 
-**El modelo Random Forest no se incluye debido a su tamaño, pero puede ser generado ejecutando el notebook de entrenamiento**
-  
-Estos modelos posteriormente se utilizan para realizar predicciones en tiempo real a partir de los datos del sensor.
+- `finalized_model_dt_pickle.pkl`  
+- `finalized_model_rf_pickle.pkl`  
+
+## Acceso al modelo Random Forest
+
+El modelo Random Forest no se encuentra incluido directamente en este repositorio debido a su tamaño.
+
+Puede descargarse desde Google Drive en el siguiente enlace:
+
+🔗 [Descargar modelo Random Forest](https://drive.google.com/file/d/1R9d0_01hZPT8YW2uegTcv7B9Y_5f_azv/view?usp=sharing)
+
+Alternativamente, el modelo puede ser reproducido ejecutando el cuaderno de entrenamiento `P6acelerometro.ipynb`.
+
+## Uso del modelo
+
+Los modelos entrenados se utilizan posteriormente para realizar predicciones en tiempo real a partir de los datos del sensor.
 
 # Funcionamiento del sistema
+
+El sistema se ejecuta conectando el sensor a una Raspberry Pi, donde se ejecuta el script `movimiento.py`.
+
+En este código, en primer lugar se cargan los datos utilizados durante el entrenamiento con el fin de obtener los mismos parámetros de normalización empleados en el modelo mediante `MinMaxScaler`.
+
+Posteriormente, se realiza la lectura de los datos del sensor en tiempo real, se aplica la misma normalización utilizada durante el entrenamiento y se ejecuta la predicción utilizando el modelo Random Forest.
+
+Finalmente, la actividad detectada se muestra en la consola.
+
+# Alcances y mejoras futuras
+
+En general, el sistema funcionó adecuadamente para la detección de las actividades: sentarse, movimiento de torso y saltar. Sin embargo, la actividad de caminar no fue reconocida con buena precisión.
+
+Se recomienda incrementar la cantidad de datos de entrenamiento, especialmente para mejorar la representación de aquellas clases con menor desempeño.
+
+Por otra parte, habría sido conveniente incluir una clase adicional correspondiente a un estado neutro (por ejemplo, de pie en reposo), lo cual permitiría mejorar la capacidad de clasificación del modelo en situaciones reales.
+
+Asimismo, un sistema inalámbrico sería una mejora importante, ya que actualmente la comunicación I2C se realiza mediante un cable de aproximadamente 7 metros.
+
+En el código de entrenamiento, las variables del sensor fueron nombradas como A, B, C, x, y, z, lo cual puede generar confusión. Una nomenclatura más descriptiva como AccX, AccY, AccZ, GyroX, GyroY y GyroZ sería más apropiada.
+
+Finalmente, en la implementación en Raspberry Pi, resulta poco práctico volver a cargar el dataset para obtener los parámetros de normalización. Sería más eficiente exportar directamente el `MinMaxScaler` entrenado o sus parámetros, evitando dependencias del conjunto de datos durante la inferencia.
+  
