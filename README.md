@@ -43,8 +43,27 @@ Los datos fueron almacenados en formato **.CSV**, imprimiendo la información ob
 
 Posteriormente, se utilizó el programa **CoolTerm** para capturar la salida serial y convertirla en archivos de texto (.TXT), con valores separados por comas.
 
-La base de datos obtenida se encuentra comprimida en el archivo **BasedeDatosMovimiento.rar**.
+La base de datos obtenida se encuentra comprimida en el archivo **"BasedeDatosMovimiento.rar"**.
 
 # Entrenamiento de los modelos
+
+El sensor proporciona seis variables de entrada:
+
+- Acelerómetro en los ejes X, Y y Z  
+- Giroscopio en los ejes X, Y y Z  
+
+A partir del cuaderno de Google Colab **"P6acelerometro.ipynb"**, se procesaron los datos obtenidos de los 10 participantes y se entrenaron dos modelos de clasificación utilizando la librería Scikit-learn.
+
+## Modelos evaluados
+
+- Árbol de decisión  
+- Random Forest  
+
+Los modelos entrenados se almacenan en archivos serializados (.pkl):
+
+- `finalized_model_dt_pickle.pkl`
+- `finalized_model_rf_pickle.pkl`
+
+Estos modelos posteriormente se utilizan para realizar predicciones en tiempo real a partir de los datos del sensor.
 
 # Funcionamiento del sistema
