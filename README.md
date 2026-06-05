@@ -4,8 +4,8 @@ Sistema de reconocimiento de actividades humanas utilizando un sensor IMU BMI160
 El sistema captura datos de acelerómetro y giroscopio, procesa las señales y clasifica diferentes movimientos en tiempo real.
 
 # Demostración
-<p align="center">
-  <a href="Imagenes/videoDeFuncionamiento.mp4">
-    <img src="media/miniatura.png" width="600">
-  </a>
-</p>
+
+https://github.com/user-attachments/assets/92d76824-e11b-4493-bbe8-c0d228bad55f
+
+
+
