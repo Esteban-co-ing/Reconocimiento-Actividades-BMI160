@@ -7,7 +7,7 @@ El sistema captura datos de acelerómetro y giroscopio, procesa las señales y c
 
 <div align="center">
 <p align="center">
-  <video src="https://github.com/user-attachments/assets/92d76824-e11b-4493-bbe8-c0d228bad55f" controls width="600"></video>
+  <video src="https://github.com/user-attachments/assets/cdbe5223-6774-4d73-8c6f-962647e2567e" controls width="600"></video>
 </p>
 </div>
 
